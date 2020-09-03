@@ -8,11 +8,13 @@ package Places is
 
    function Create (X : Float; Y : Float) return Disc_Pt;
 
-   -- function Return_Self (D: Disc_Pt) return Disc_Pt;
-   -- -- I dare you to uncomment these, making the functions public
-   -- procedure Do_Nothing (D: Disc_Pt);
-
    procedure Put (D: Disc_Pt);
+
+   -- function Return_Self (D: Disc_Pt) return Disc_Pt;
+   -- -- I dare you to uncomment these, making the subprograms public
+   -- -- this is the essential difference; if you move them down below 'private'
+   -- -- or leave them out of the specification then these don't call the type_invariant
+   -- procedure Do_Nothing (D: Disc_Pt);
 
 private
    type Disc_Pt is

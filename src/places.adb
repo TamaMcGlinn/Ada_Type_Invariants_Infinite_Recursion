@@ -26,8 +26,14 @@ package body Places is
    end Put;
 
    function Check_In(D: Disc_Pt) return Boolean is
-      E : Disc_Pt := Return_Self (D);
+      -- E : Disc_Pt; -- this also infinitely recurses, but not if we supply it with values
    begin
+      declare
+         F : Disc_Pt := Return_Self (D); -- or comment this block and uncomment Do_Nothing for the procedure version
+      begin
+         null;
+      end;
+      -- Do_Nothing (D); -- oddly enough, for public procedures the type invariant expression is not called
       return (D.X**2 + D.Y**2 <= 1.0);
    end Check_In;
 
