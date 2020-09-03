@@ -1,0 +1,11 @@
+project invariant_test is
+
+   for Create_Missing_Dirs use "True";
+    for Source_Dirs use ("src");
+    for Object_Dir use "obj";
+    for Main use ("main.adb");
+
+    package Compiler is
+       for Default_Switches ("Ada") use ("-g", "-gnatec=" & invariant_test'Project_Dir & "pragmas.adc");
+    end Compiler;
+end invariant_test;
